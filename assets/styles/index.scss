@@ -1,1 +1,64 @@
-@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/bootstrap'
+
+
+
+i {
+    font-size: 5em;
+}
+
+main {
+    margin: 125px 0;
+}
+
+form {
+    width: 75%;
+    margin: auto auto;
+}
+
+
+.modal-bg,
+.modal-bg-up,
+.modal-bg-create,
+.modal-bg-show {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity .5s;
+}
+
+.nav-title {
+    font-size: 15px;
+    float: left;
+}
+
+.bg-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+// .modal {
+//     align-items: center;
+//     position: relative;
+// }
+
+.modal-close {
+    position: absolute;
+    top: -15px;
+    right: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.success-msg,
+.failure-msg {
+    margin-bottom: 30px;
+}
