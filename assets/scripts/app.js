@@ -16,4 +16,7 @@ $(() => {
   
   // MODALS 
   $('#log-in-modal').on('click', listEvents.logInModal)
+
+  // LIST EVENTS
+  $('#list-index').on('click', listEvents.onShowLists)
 })

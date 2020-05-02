@@ -1,5 +1,4 @@
-const store         = require('../store'),
-showListsTemplate   = require('../templates/list-index.handlebars')
+const store         = require('../store')
 
 
 const signUpSuccess = function(data){

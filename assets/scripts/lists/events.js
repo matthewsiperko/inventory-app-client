@@ -3,6 +3,14 @@ const api = require('./api')
 const ui = require('./ui')
 
 
+// LIST EVENTS
+const onShowLists = function(event) {
+    event.preventDefault()
+    api.getLists()
+        .then(ui.showListSuccess)
+        .catch(ui.showListFailure)
+}
+
 // MODALS 
 const logInModal = function(event) {
     event.preventDefault()
@@ -19,5 +27,6 @@ const onPageLoad = function() {
 
 module.exports = {
     logInModal,
-    onPageLoad
+    onPageLoad,
+    onShowLists
 }

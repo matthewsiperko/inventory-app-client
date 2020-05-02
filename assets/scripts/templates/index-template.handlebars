@@ -1,0 +1,18 @@
+{{#each lists as |list|}}
+  <section data-id="{{list.id}}">
+    <h6>Title:</h6>
+    <h3>
+      {{limit list.name 15}}
+    </h2>
+    <h6>Author:</h6>
+    {{!-- <p>
+      {{#if book.author}}
+        {{book.author}}
+      {{else}}
+        No author provided.
+      {{/if}}
+    </p> --}}
+    <button type="submit" class="btn btn-danger delete-book">Remove</button>
+  </section>
+
+{{/each}}
