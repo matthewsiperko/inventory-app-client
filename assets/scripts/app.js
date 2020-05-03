@@ -16,7 +16,11 @@ $(() => {
   
   // MODALS 
   $('#log-in-modal').on('click', listEvents.logInModal)
+  $('#sign-up-link').on('click', listEvents.signUpModal)
 
   // LIST EVENTS
+  $('.content').on('click', '.delete-btn', listEvents.onDeleteList)
+  $('.content').on('click', '.update-btn', listEvents.onUpdateForm)
   $('#list-index').on('click', listEvents.onShowLists)
+  $('.create-form').on('submit', listEvents.onCreateList)
 })

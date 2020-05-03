@@ -1,11 +1,17 @@
 const store = require('../store')
 const config = require('../config')
 
+
+
 const getLists = function () {
   return $.ajax({
-    url: config.apiUrl + '/lists'
+    url: config.apiUrl + '/lists',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
-}
+} 
 
 const showList = function(id) {
   return $.ajax({
@@ -28,8 +34,20 @@ const createList = function(data) {
   })
 }
 
+const deleteList = function(id) {
+  return $.ajax({
+    url: config.apiUrl + '/lists/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+
 module.exports = {
     getLists,
     showList,
-    createList
+    createList,
+    deleteList
 }

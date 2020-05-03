@@ -1,7 +1,5 @@
 // @import '~bootstrap/scss/bootstrap'
 
-
-
 i {
     font-size: 5em;
 }
@@ -15,6 +13,9 @@ form {
     margin: auto auto;
 }
 
+.form-display {
+    margin: 50% auto;
+}
 
 .modal-bg,
 .modal-bg-up,
@@ -32,6 +33,42 @@ form {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity .5s;
+}
+
+.hidden {
+    display: none;
+}
+
+.update-btn {
+    margin: 10px 10px;
+    color: green;
+    cursor: pointer;
+}
+
+.delete-btn {
+    margin: 5px;
+    color: red;
+    cursor: pointer;
+}
+
+.name {
+    border-bottom: 1px solid #000;
+}
+
+.green {
+    background-color: #008000cb;
+}
+
+.quantity {
+    float: right;
+    margin-right: 15px;
+    border-bottom: 1px solid #000;
+}
+
+.list-quantity {
+    display: inline-block;
+    margin-right: 15px;
+    float: right;
 }
 
 .nav-title {

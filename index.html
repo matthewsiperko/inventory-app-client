@@ -23,8 +23,12 @@
                   <button class="item ui grey basic button" id="list-index">See my List</button>
                   <button class="item ui grey basic button" id="log-out">Log Out</button>
                 </div>
+                <div class="ui buttons">
+                  <button class="ui inverted secondary basic button" id="sign-up-link">Sign Up</button>
+                </div>
               </div>
             </div>
+
       
       <main>
         <!-- SUCCESS MESSAGE  -->
@@ -54,7 +58,6 @@
         <div class="modal">
             <div class="ui main text container segment" id="sign-in">
               <form class="sign-in ui form">
-                <span class="modal-close">X</span>
                 <div class="ui huge header">Log In</div>
                 <div class="field">
                   <label>Username:</label>
@@ -64,7 +67,7 @@
                   <label>Password:</label>
                   <input class="input" type="password" name="credentials[password]" placeholder="Password...">
                 </div>
-                <input class="ui secondary basic button" type="submit" value="Sign In!!">
+                <input class="ui primary basic fluid button" type="submit" value="Sign In!!">
               </form>
             </div> 
           </div> 
@@ -93,27 +96,46 @@
         </div>
 
 
-
+        <!-- MAIN DISPLAY  -->
       <div class="ui container index">
       <div class="ui raised segment">
         <div class="ui two column very relaxed grid">
           <div class="column">
+            <div class="ui raised segment">
+              <span class="name">Name</span> <span class="quantity">Quantity</span>
+            </div>
             <div class="content" id="content"></div>
           </div>
           <div class="column">
             <!-- <div class="ui main text container segment" id="create-form"> -->
-              <form class="ui form">
+              <div class="ui raised segment form-display">
+                <!-- CREATE FORM  -->
+              <form class="ui form create-form">
                 <div class="ui huge header">Add an Item..</div>
                 <div class="field">
                   <label>Name:</label>
-                  <input class="input" type="text" name="credentials[email]" placeholder="...">
+                  <input class="input" type="text" name="list[name]" placeholder="...">
                 </div>
                 <div class="field">
                   <label>Quantity:</label>
-                  <input class="input" type="number" name="credentials[password]" placeholder="...">
+                  <input class="input" type="number" name="list[quantity]" placeholder="...">
                 </div>
                 <input class="ui primary basic fluid button" id="create-btn" type="submit" value="Add">
               </form>
+              <!-- UPPDATE FORM  -->
+              <form class="ui form update-form hidden">
+                <div class="ui huge header update-form">Update Item..</div>
+                <div class="field">
+                  <label>Name:</label>
+                  <input class="input" type="text" name="list[name]" placeholder="...">
+                </div>
+                <div class="field">
+                  <label>Quantity:</label>
+                  <input class="input" type="number" name="list[quantity]" placeholder="...">
+                </div>
+                <input class="ui positive basic fluid button" id="create-btn" type="submit" value="Update">
+              </form>
+            </div>
             <!-- </div>  -->
           </div>
         </div>
