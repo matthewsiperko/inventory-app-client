@@ -5,8 +5,10 @@ const signUpSuccess = function(data){
    $('.input').val('')
    $('.success-msg').fadeIn('fast', () => {
     $('.success-msg').delay(500).fadeOut()
-})
-$('.success-msg h3').text('You signed Up successfully! Please Log In.')
+    })
+    $('.success-msg h3').text('You signed Up successfully! Please Log In.')
+    $('.modal-bg').addClass('bg-active')
+    $('.update-form').addClass('hidden')
 }
    
 
