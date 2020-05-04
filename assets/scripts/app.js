@@ -10,17 +10,24 @@ listEvents        = require('../scripts/lists/events')
 
 $(() => {
   listEvents.onPageLoad()
+  listEvents.addHandlers()
   // AUTH 
   $('.sign-up').on('submit', authEvents.onSignUp)
   $('.sign-in').on('submit', authEvents.onSignIn)
+  $('.log-out').on('click', authEvents.onSignOut)
+  $('.change-password').on('submit', authEvents.onChangePassword)
   
   // MODALS 
+  $('.modal-close').on('click', listEvents.closeModal)
+  $('.close-change').on('click', listEvents.closeChangeModal)
   $('#log-in-modal').on('click', listEvents.logInModal)
   $('#sign-up-link').on('click', listEvents.signUpModal)
+  $('#change-password-link').on('click', listEvents.changePasswordModal)
+  $('.close-update').on('click', listEvents.closeUpdateModal)
 
   // LIST EVENTS
   $('.content').on('click', '.delete-btn', listEvents.onDeleteList)
-  $('.content').on('click', '.update-btn', listEvents.onUpdateForm)
+  $('.content').on('click', '.update-btn-link', listEvents.onUpdateForm)
   $('#list-index').on('click', listEvents.onShowLists)
   $('.create-form').on('submit', listEvents.onCreateList)
 })

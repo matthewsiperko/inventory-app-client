@@ -1,6 +1,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+let updateId 
 
 
 // LIST EVENTS
@@ -30,19 +31,18 @@ const onUpdateForm = function(event) {
     event.preventDefault()
     $('.create-form').addClass('hidden')
     $('.update-form').removeClass('hidden')
-    $('.update-form').fadeIn('fast', () => {
-        $('.update-form').addClass('green')
-        $('.update-form').delay(2000).removeClass('green')
-    })
+    updateId = $(event.target).data('id')
 }
+
 
 const onUpdateList = function(event) {
     event.preventDefault()
-    const id = $(event.target).data('id')
+    const id = updateId
     const data = getFormFields(event.target)
     api.updateList(data, id)
-        .then()
-        .catch()
+        .then(() => onShowLists(event))
+        .then(ui.updateSuccess)
+        .catch(ui.updateFailure)
 }
 
 // MODALS 
@@ -57,21 +57,56 @@ const signUpModal = function(event) {
    $('.modal-bg-up').addClass('bg-active')
 }
 
+const closeModal = function(event) {
+    event.preventDefault()
+    $('.modal-bg-up').removeClass('bg-active')
+    $('.modal-bg').addClass('bg-active')
+}
+
+const closeChangeModal = function(event) {
+    event.preventDefault()
+    $('.modal-bg-change').removeClass('bg-active')
+    $('.modal-bg').removeClass('bg-active')
+}
+
+const closeUpdateModal = function(event) {
+    event.preventDefault()
+    $('.update-form').addClass('hidden')
+    $('.create-form').removeClass('hidden')
+    $('.modal-bg').removeClass('bg-active')
+}
+
+const changePasswordModal = function(event) {
+    event.preventDefault()
+    $('.index').hide()
+    $('.modal-bg-change').addClass('bg-active')
+}
+
 const onPageLoad = function() {
     $('.success-msg').hide()
     $('.failure-msg').hide()
     $('.index').hide()
     $('.logged-in').hide()
     $('.modal-bg').addClass('bg-active')
+    $('#sign-up-link').show()
+}
+
+const addHandlers = function() {
+    $('.update-form').on('submit', onUpdateList)
 }
 
 module.exports = {
     logInModal,
     signUpModal,
+    closeModal,
+    changePasswordModal,
+    closeChangeModal,
+    closeUpdateModal,
     onPageLoad,
     onShowLists,
     onCreateList,
     onDeleteList,
     onUpdateList,
-    onUpdateForm
+    onUpdateForm,
+    addHandlers
 }

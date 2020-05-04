@@ -21,7 +21,8 @@
                 <div class="user-display header item"></div>
                 <div class="ui buttons logged-in">
                   <button class="item ui grey basic button" id="list-index">See my List</button>
-                  <button class="item ui grey basic button" id="log-out">Log Out</button>
+                  <button class="item ui grey basic button log-out">Log Out</button>
+                  <button class="item ui grey basic button" id="change-password-link">Change Password</button>
                 </div>
                 <div class="ui buttons">
                   <button class="ui inverted secondary basic button" id="sign-up-link">Sign Up</button>
@@ -81,7 +82,7 @@
               <span class="modal-close">X</span>
               <legend>Sign Up!</legend>
               <div class="field">
-                <input class="input" type="text" name="credentials[email]" placeholder="Email...">
+                <input class="input" type="text" name="credentials[email]" placeholder="Create a UserName...">
               </div>
               <div class="field">
                 <input class="input" type="password" name="credentials[password]" placeholder="Password...">
@@ -95,6 +96,26 @@
           </div>
         </div>
 
+        <!-- CHANGE PASSWORD MODAL  -->
+        <div class="modal-bg-change">
+          <div class="modal">
+              <div class="ui main text container segment" id="change-password">
+                <form class="change-password ui form">
+                  <span class="modal-close close-change">X</span>
+                  <div class="ui huge header">Change Password</div>
+                  <div class="field">
+                    <label>Previous Password</label>
+                    <input class="input" type="password" name="passwords[old]" placeholder="Current Password..">
+                  </div>
+                  <div class="field">
+                    <label>New Password:</label>
+                    <input class="input" type="password" name="passwords[new]" placeholder="New Password..">
+                  </div>
+                  <input class="ui primary basic fluid button" type="submit" value="Change Password!">
+                </form>
+              </div> 
+            </div> 
+          </div> 
 
         <!-- MAIN DISPLAY  -->
       <div class="ui container index">
@@ -122,8 +143,9 @@
                 </div>
                 <input class="ui primary basic fluid button" id="create-btn" type="submit" value="Add">
               </form>
-              <!-- UPPDATE FORM  -->
+              <!-- UPDATE FORM  -->
               <form class="ui form update-form hidden">
+                <span class="modal-close close-update">X</span>
                 <div class="ui huge header update-form">Update Item..</div>
                 <div class="field">
                   <label>Name:</label>
@@ -133,7 +155,7 @@
                   <label>Quantity:</label>
                   <input class="input" type="number" name="list[quantity]" placeholder="...">
                 </div>
-                <input class="ui positive basic fluid button" id="create-btn" type="submit" value="Update">
+                <input class="ui positive basic fluid button" id="update-btn" type="submit" value="Update">
               </form>
             </div>
             <!-- </div>  -->

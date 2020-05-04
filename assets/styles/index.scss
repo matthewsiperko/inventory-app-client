@@ -20,7 +20,8 @@ form {
 .modal-bg,
 .modal-bg-up,
 .modal-bg-create,
-.modal-bg-show {
+.modal-bg-show,
+.modal-bg-change {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -39,7 +40,7 @@ form {
     display: none;
 }
 
-.update-btn {
+.update-btn-link {
     margin: 10px 10px;
     color: green;
     cursor: pointer;
