@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Inventory</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+            <!-- NAV MENU  -->
+            <div class="ui fixed inverted menu">
+              <div class="ui container">
+                <div class="header item nav-title"><i class="clipboard outline icon "></i>Inventory</div>
+                <div class="user-display header item"></div>
+                <div class="ui buttons logged-in">
+                  <button class="item ui grey basic button" id="list-index">See my List</button>
+                  <button class="item ui grey basic button log-out">Log Out</button>
+                  <button class="item ui grey basic button" id="change-password-link">Change Password</button>
+                </div>
+                <div class="ui buttons">
+                  <button class="ui inverted secondary basic button" id="sign-up-link">Sign Up</button>
+                </div>
+              </div>
+            </div>
+
+      
+      <main>
+        <!-- SUCCESS MESSAGE  -->
+        <div class="ui container success-msg">
+        <div class="ui success message">
+          <i class="close icon"></i>
+          <div class="header">
+            <h3></h3>
+          </div>
+        </div>
+        </div>
+
+        <!-- FAILURE MESSAGE  -->
+        <div class="ui container failure-msg">
+        <div class="ui negative message">
+          <i class="close icon"></i>
+          <div class="header">
+            <h3></h3>
+          </div>
+        </div>
+        </div>
+
+
+
+           <!-- SIGN IN MODAL  -->
+       <div class="modal-bg">
+        <div class="modal">
+            <div class="ui main text container segment" id="sign-in">
+              <form class="sign-in ui form">
+                <div class="ui huge header">Log In</div>
+                <div class="field">
+                  <label>Username:</label>
+                  <input class="input" type="text" name="credentials[email]" placeholder="Username...">
+                </div>
+                <div class="field">
+                  <label>Password:</label>
+                  <input class="input" type="password" name="credentials[password]" placeholder="Password...">
+                </div>
+                <input class="ui primary basic fluid button" type="submit" value="Sign In!!">
+              </form>
+            </div> 
+          </div> 
+        </div> 
+
+        <!-- SIGN UP MODAL  -->
+        <div class="modal-bg-up">
+          <div class="modal">
+           <div class="ui text container segment" id="sign-up">
+            <form class="sign-up ui form">
+              <span class="modal-close">X</span>
+              <legend>Sign Up!</legend>
+              <div class="field">
+                <input class="input" type="text" name="credentials[email]" placeholder="Create a UserName...">
+              </div>
+              <div class="field">
+                <input class="input" type="password" name="credentials[password]" placeholder="Password...">
+              </div>
+              <div class="field">
+                <input class="input" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password...">
+              </div>
+              <input class="ui secondary basic button" type="submit" value="Sign Up!!">
+            </form>
+          </div>
+          </div>
+        </div>
+
+        <!-- CHANGE PASSWORD MODAL  -->
+        <div class="modal-bg-change">
+          <div class="modal">
+              <div class="ui main text container segment" id="change-password">
+                <form class="change-password ui form">
+                  <span class="modal-close close-change">X</span>
+                  <div class="ui huge header">Change Password</div>
+                  <div class="field">
+                    <label>Previous Password</label>
+                    <input class="input" type="password" name="passwords[old]" placeholder="Current Password..">
+                  </div>
+                  <div class="field">
+                    <label>New Password:</label>
+                    <input class="input" type="password" name="passwords[new]" placeholder="New Password..">
+                  </div>
+                  <input class="ui primary basic fluid button" type="submit" value="Change Password!">
+                </form>
+              </div> 
+            </div> 
+          </div> 
+
+        <!-- MAIN DISPLAY  -->
+      <div class="ui container index">
+      <div class="ui raised segment">
+        <div class="ui two column very relaxed grid">
+          <div class="column">
+            <div class="ui raised segment">
+              <span class="name">Name</span> <span class="quantity">Quantity</span>
+            </div>
+            <div class="content" id="content"></div>
+          </div>
+          <div class="column">
+            <!-- <div class="ui main text container segment" id="create-form"> -->
+              <div class="ui raised segment form-display">
+                <!-- CREATE FORM  -->
+              <form class="ui form create-form">
+                <div class="ui huge header">Add an Item..</div>
+                <div class="field">
+                  <label>Name:</label>
+                  <input class="input" type="text" name="list[name]" placeholder="...">
+                </div>
+                <div class="field">
+                  <label>Quantity:</label>
+                  <input class="input" type="number" name="list[quantity]" placeholder="...">
+                </div>
+                <input class="ui primary basic fluid button" id="create-btn" type="submit" value="Add">
+              </form>
+              <!-- UPDATE FORM  -->
+              <form class="ui form update-form hidden">
+                <span class="modal-close close-update">X</span>
+                <div class="ui huge header update-form">Update Item..</div>
+                <div class="field">
+                  <label>Name:</label>
+                  <input class="input" type="text" name="list[name]" placeholder="...">
+                </div>
+                <div class="field">
+                  <label>Quantity:</label>
+                  <input class="input" type="number" name="list[quantity]" placeholder="...">
+                </div>
+                <input class="ui positive basic fluid button" id="update-btn" type="submit" value="Update">
+              </form>
+            </div>
+            <!-- </div>  -->
+          </div>
+        </div>
+        <div class="ui vertical divider">
+        <i class="clipboard outline icon "></i>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+    </body>
+</html>
