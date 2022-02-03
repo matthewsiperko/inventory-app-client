@@ -4,7 +4,7 @@ const store         = require('../store')
 const signUpSuccess = function(data){
    $('.input').val('')
    $('.success-msg').fadeIn('fast', () => {
-    $('.success-msg').delay(500).fadeOut()
+    $('.success-msg').delay(800).fadeOut()
     })
     $('.success-msg h3').text('You signed Up successfully! Please Log In.')
     $('.modal-bg').addClass('bg-active')
@@ -15,7 +15,7 @@ const signUpSuccess = function(data){
 const signUpFailure = function(error){
     $('.input').val('')
     $('.failure-msg').fadeIn('fast', () => {
-        $('.failure-msg').delay(500).fadeOut()
+        $('.failure-msg').delay(800).fadeOut()
     })
     $('.failure-msg h3').text('Sign Up failed. Please try again.')
     
@@ -24,7 +24,7 @@ const signUpFailure = function(error){
 const signInSuccess = function(data){
     store.user = data.user
     $('.success-msg').fadeIn('fast', () => {
-        $('.success-msg').delay(250).fadeOut()
+        $('.success-msg').delay(800).fadeOut()
     })
     $('.success-msg h3').text('You signed in successfully!')
     $('.modal-bg').removeClass('bg-active')
@@ -37,14 +37,14 @@ const signInSuccess = function(data){
 const signInFailure = function(error){
     $('.input').val('')
     $('.failure-msg').fadeIn('fast', () => {
-        $('.failure-msg').delay(500).fadeOut()
+        $('.failure-msg').delay(800).fadeOut()
     })
     $('.failure-msg h3').text('Log in failed. Please try again.')
 }
 
 const signOutSuccess = function(data) {
     $('.success-msg').fadeIn('fast', () => {
-        $('.success-msg').delay(500).fadeOut()
+        $('.success-msg').delay(800).fadeOut()
     })
     $('.success-msg h3').text('You signed out successfully!')
     $('.index').hide()
@@ -57,7 +57,7 @@ const signOutSuccess = function(data) {
 const signOutFailure = function(error) {
     $('.input').val('')
     $('.failure-msg').fadeIn('fast', () => {
-        $('.failure-msg').delay(500).fadeOut()
+        $('.failure-msg').delay(800).fadeOut()
     })
     $('.failure-msg h3').text('Sign Out Failed. Please try again.')
 }
@@ -65,7 +65,7 @@ const signOutFailure = function(error) {
 const changePasswordSuccess = function(data) {
     $('.input').val('')
     $('.success-msg').fadeIn('fast', () => {
-        $('.success-msg').delay(500).fadeOut()
+        $('.success-msg').delay(800).fadeOut()
     })
     $('.success-msg h3').text('Password Change Success!')
     $('.modal-bg-change').removeClass('bg-active')
@@ -74,7 +74,7 @@ const changePasswordSuccess = function(data) {
 const changePasswordFailure = function(error) {
     $('.input').val('')
     $('.failure-msg').fadeIn('fast', () => {
-        $('.failure-msg').delay(500).fadeOut()
+        $('.failure-msg').delay(800).fadeOut()
     })
     $('.failure-msg h3').text('Password Change Failed. Please try again.')
 }

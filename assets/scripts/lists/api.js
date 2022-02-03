@@ -5,7 +5,7 @@ const config = require('../config')
 
 const getLists = function () {
   return $.ajax({
-    url: config.apiUrl + '/lists',
+    url: config.apiUrl + '/items',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -15,7 +15,7 @@ const getLists = function () {
 
 const showList = function(id) {
   return $.ajax({
-    url: config.apiUrl + '/lists/' + id,
+    url: config.apiUrl + '/items/' + id,
     method: 'GET',
     headers: {
         Authorization: 'Token token=' + store.user.token
@@ -25,7 +25,7 @@ const showList = function(id) {
 
 const createList = function(data) {
   return $.ajax({
-    url: config.apiUrl + '/lists',
+    url: config.apiUrl + '/items',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -36,7 +36,7 @@ const createList = function(data) {
 
 const deleteList = function(id) {
   return $.ajax({
-    url: config.apiUrl + '/lists/' + id,
+    url: config.apiUrl + '/items/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -46,7 +46,7 @@ const deleteList = function(id) {
 
 const updateList = (data, id) => {
   return $.ajax({
-    url: config.apiUrl + '/lists/' + id,
+    url: config.apiUrl + '/items/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

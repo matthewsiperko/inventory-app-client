@@ -1,4 +1,3 @@
-
 const config    = require('../config.js'),
 store           = require('../store.js')
 

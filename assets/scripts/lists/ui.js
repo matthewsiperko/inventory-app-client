@@ -1,16 +1,21 @@
 const indexTemplate = require('../templates/index-template.handlebars')
 
 const showListSuccess = function(data) {
-    const indexHtml = indexTemplate({ lists: data.lists })
     $('.index').show()
-    $('.content').html(indexHtml)
+    if(data.items.length === 0) {
+        $('.items-display').hide()
+    } else {
+        const indexHtml = indexTemplate({ items: data.items })
+        $('.content').html(indexHtml)
+    }
     $('.input').val('')
 }
+
 
 const showListFailure = function(error) {
     $('.input').val('')
     $('.failure-msg').fadeIn('fast', () => {
-        $('.failure-msg').delay(250).fadeOut()
+        $('.failure-msg').delay(800).fadeOut()
     })
     $('.failure-msg h3').text('Couldn\'t find items. Please try again.')
 }
@@ -18,7 +23,7 @@ const showListFailure = function(error) {
 const createListSuccess = function(data) {
     $('.input').val('')
     $('.success-msg').fadeIn('fast', () => {
-        $('.success-msg').delay(250).fadeOut()
+        $('.success-msg').delay(800).fadeOut()
     })
     $('.success-msg h3').text('Item Created!')
 }
@@ -26,7 +31,7 @@ const createListSuccess = function(data) {
 const createListFailure = function() {
     $('.input').val('')
     $('.failure-msg').fadeIn('fast', () => {
-        $('.failure-msg').delay(250).fadeOut()
+        $('.failure-msg').delay(800).fadeOut()
     })
     $('.failure-msg h3').text('Couldn\'t create item. Please try again.')
 }
@@ -34,7 +39,7 @@ const createListFailure = function() {
 const updateSuccess = function() {
     $('.input').val('')
     $('.success-msg').fadeIn('fast', () => {
-        $('.success-msg').delay(250).fadeOut()
+        $('.success-msg').delay(800).fadeOut()
     })
     $('.success-msg h3').text('Item Updated!')
     $('.update-form').addClass('hidden')
